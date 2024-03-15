@@ -16,6 +16,7 @@ steps:
     ng build 
   displayName: 'npm install and build'
 
-- task: CmdLine@2
+- task: Npm@1
   inputs:
-    script: 'ls'
+    command: 'publish'
+    workingDir: '$(build. sourcesdirectory)'
