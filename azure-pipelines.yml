@@ -18,6 +18,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultworkingDIrectory)/dist'
+    PathtoPublish: '$(System.DefaultworkingDIrectory)'
     ArtifactName: 'Angular'
     publishLocation: 'Container'
