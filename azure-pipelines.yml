@@ -10,14 +10,16 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build 
-  displayName: 'npm install and build'
+- task: CmdLine@2
+  inputs:
+    script: 'npm install'
+
+- task: CmdLine@2
+  inputs:
+    script: 'npm run build'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'C:\azagent\_work\2\s\dist'
+    PathtoPublish: 'C:\azagent\_work\2\s'
     ArtifactName: 'Angular'
     publishLocation: 'Container'
